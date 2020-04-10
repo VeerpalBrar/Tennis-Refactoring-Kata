@@ -53,23 +53,16 @@ class TennisGame1
   end
 
   def intermediateScores
-    result = ""
-    tempScore=0
-    (1...3).each do |i|
-      if (i==1)
-        tempScore = @p1points
-      else
-        result+="-"
-        tempScore = @p2points
-      end
-      result += {
-          0 => "Love",
-          1 => "Fifteen",
-          2 => "Thirty",
-          3 => "Forty",
-      }[tempScore]
-    end
-    result
+    "#{values()[@p1points]}-#{values()[@p2points]}"
+  end
+
+  def values
+     {
+        0 => "Love",
+        1 => "Fifteen",
+        2 => "Thirty",
+        3 => "Forty",
+    }
   end
 
 end
